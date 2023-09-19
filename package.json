@@ -4,6 +4,7 @@
   "description": "ToDoApp Server Side",
   "main": "server.js",
   "scripts": {
+    "i": "npm i",
     "run": "node server.js",
     "dev": "nodemon server.js"
   },
