@@ -19,15 +19,15 @@ app.use(cookieParser());
 
 
 
-app.use('*', (req, res, next) => {
-  console.log(req.path, req.method)
-  // res.setHeader('Access-Control-Allow-Origin', any);
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://lively-figolla-6460e1.netlify.app/');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
-  // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE');
-  // res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
-  next()
-})
+
 
 // Routes 
 app.use('/api/todo', todo)
